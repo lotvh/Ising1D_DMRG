@@ -98,10 +98,16 @@ The ground state energy was plotted as a function of the external field for both
 
 For this case, a chain of length 4 was chosen. In order to test the accuracy of the DMRG algorithm, also a manually calculated result is shown in the same graph. This result was calculated by diagonalizing the Hamiltonian using the `eig` method which is available in numpy and is implemented in function `Ising_diag_4sites`. Open boundary conditions were used for the lattice.
 
+![energy_next](https://user-images.githubusercontent.com/49079733/221142987-7e3539e1-f6ef-4906-9b10-e3d2c25b7018.png)
+
 ### Unlimited (bonus)
 
 For this case, periodic boundary conditions were used for the lattice. Due to the computational cost, less values were calculated than in the limited case.
 
+![GroundEvsFieldInfinite](https://user-images.githubusercontent.com/49079733/221143139-beac395a-d696-48a6-b9f4-63ac7d62a347.png)
+
 ## Magnetization as a function of the external field (5)
 
 The magnetization in the x-direction of the Ising model can be found as $M = < \sum_i s_i^x >$
+
+![Magnetization](https://user-images.githubusercontent.com/49079733/221143260-7ee66849-94f5-4c21-85d2-f8c86d9db1a8.png)
