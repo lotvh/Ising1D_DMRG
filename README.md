@@ -17,14 +17,35 @@ where $J_1$ and $J_2$ describe how strong the nearest neighbour and next-to-near
 In order to find the ground state of a system, the Hamiltonian can be described by a matrix product operator (MPO). The Hamiltonian defined above can be rewritten as a function of terms defined on the left and right side of the $k$-th term:
 
 $$
-\hat{H} = (I_{1..k-1}) \otimes J_1 \sigma_k^x \otimes (\sigma_{k+1}^x \otimes I_{k+2..N}) + (I_{1..k-2} \otimes J_1 \sigma_{k-1}^x) \otimes \sigma_k^x \otimes (I_{k+1..N}) \\
-+ ( \sum_{i=1}^{k-2} I_{1..i-1} \otimes J_1 \sigma_i^x \otimes \sigma_{i+1}^x \otimes I_{i+2..k-1}) \otimes I_k \otimes (I_{k+1..N}) \\
-+ (I_{1..k-1}) \otimes I_k \otimes (\sum_{i=k+1}^{N-1} I_{k+1..i-1} \otimes J_1 \sigma_i^x \otimes \sigma_{i+1}^x \otimes I_{i+2..N}) \\
-+ (I_{1..k-1}) \otimes J_2 \sigma_k^x \otimes (I_{k+1} \otimes \sigma_{k+2}^x \otimes I_{k+3..N} ) + (I_{1..k-2} \otimes J_2 \sigma_{k-1}^x) \otimes I_k \otimes (\sigma_{k+1}^x \otimes I_{k+2..N}) \\
-+ (I_{1..k-3} \otimes J_2 \sigma_{k-2} \otimes I_{k-1}) \otimes \sigma_k^x \otimes (I_{k+1..N}) \\
-+ ( \sum_{i=1}^{k-3} I_{1..i-1} \otimes J_2 \sigma_i^x \otimes I \otimes \sigma_{i+2}^x \otimes I_{i+3..k-1}) \otimes I_k \otimes (I_{k+1..N}) \\
-+ (I_{1..k-1}) \otimes I_k \otimes (\sum_{i=k+1}^{N-1} I_{k+1..i-1} \otimes J_2 \sigma_i^x \otimes I \otimes \sigma_{i+2}^x \otimes I_{i+3..N}) \\
-+ ...
+\hat{H} = (I_{1..k-1}) \otimes J_1 \sigma_k^x \otimes (\sigma_{k+1}^x \otimes I_{k+2..N}) + (I_{1..k-2} \otimes J_1 \sigma_{k-1}^x) \otimes \sigma_k^x \otimes (I_{k+1..N}) +
+$$
+
+$$
+( \sum_{i=1}^{k-2} I_{1..i-1} \otimes J_1 \sigma_i^x \otimes \sigma_{i+1}^x \otimes I_{i+2..k-1}) \otimes I_k \otimes (I_{k+1..N}) +
+$$
+
+$$
+(I_{1..k-1}) \otimes I_k \otimes (\sum_{i=k+1}^{N-1} I_{k+1..i-1} \otimes J_1 \sigma_i^x \otimes \sigma_{i+1}^x \otimes I_{i+2..N}) +
+$$
+
+$$
+(I_{1..k-1}) \otimes J_2 \sigma_k^x \otimes (I_{k+1} \otimes \sigma_{k+2}^x \otimes I_{k+3..N} ) + (I_{1..k-2} \otimes J_2 \sigma_{k-1}^x) \otimes I_k \otimes (\sigma_{k+1}^x \otimes I_{k+2..N}) +
+$$
+
+$$
+(I_{1..k-3} \otimes J_2 \sigma_{k-2} \otimes I_{k-1}) \otimes \sigma_k^x \otimes (I_{k+1..N}) +
+$$
+
+$$
+( \sum_{i=1}^{k-3} I_{1..i-1} \otimes J_2 \sigma_i^x \otimes I \otimes \sigma_{i+2}^x \otimes I_{i+3..k-1}) \otimes I_k \otimes (I_{k+1..N}) +
+$$
+
+$$
+(I_{1..k-1}) \otimes I_k \otimes (\sum_{i=k+1}^{N-1} I_{k+1..i-1} \otimes J_2 \sigma_i^x \otimes I \otimes \sigma_{i+2}^x \otimes I_{i+3..N}) +
+$$
+
+$$
+...
 $$
 
 where the $g$-terms were not written for visibility and $1_{i..j} = \otimes_{l=i}^k I_l$.
