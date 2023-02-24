@@ -90,6 +90,12 @@ First, the wavefunction is initialized from the model where we assume that all s
 
 ## Quantum Computers (3)
 
+The DMRG algorithm could be accelerated by running it on a quantum computer vs a classical computer. This would especially be benificial to larger systems, such as the infinite case of the TFIM.
+
+By implementing tensor networks on NISQ machines, quantum systems much larger than the computational machine itself can be simulated, and the DMRG algorithm can run a lot more efficiently than on a classical computer and for much larger systems. [1]
+
+[1] Barratt, F., Dborin, J., Bal, M. et al. Parallel quantum simulation of large systems on small NISQ computers. npj Quantum Inf 7, 79 (2021). https://doi.org/10.1038/s41534-021-00420-3
+
 ## Ground state energy as a function of the external field (4)
 
 The ground state energy was plotted as a function of the external field for both the finite and infinite version of the model.
@@ -102,12 +108,12 @@ For this case, a chain of length 4 was chosen. In order to test the accuracy of 
 
 ### Unlimited (bonus)
 
-For this case, periodic boundary conditions were used for the lattice. Due to the computational cost, less values were calculated than in the limited case.
+For this case, periodic boundary conditions were used for the lattice. Due to the computational cost, less values were calculated than in the limited case. The ground state energy is considerably higher than in the finite case, but the decay w.r.t. the external field is preserved.
 
 ![GroundEvsFieldInfinite](https://user-images.githubusercontent.com/49079733/221143139-beac395a-d696-48a6-b9f4-63ac7d62a347.png)
 
 ## Magnetization as a function of the external field (5)
 
-The magnetization in the x-direction of the Ising model can be found as $M = < \sum_i s_i^x >$
+The magnetization in the x-direction of the Ising model can be found as $M = < \sum_i s_i^x >$. The magnetization seems to drop to 0 once the external field is present.
 
 ![Magnetization](https://user-images.githubusercontent.com/49079733/221143260-7ee66849-94f5-4c21-85d2-f8c86d9db1a8.png)
