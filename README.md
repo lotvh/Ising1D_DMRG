@@ -12,7 +12,7 @@ $$
 
 where $J_1$ and $J_2$ describe how strong the nearest neighbour and next-to-nearest neigbour interactions are, respectively. The term $g$ describes the strength of the external magnetic field. Note that the above Hamiltonian approaches the nearest-neighbour Ising model for $J_2 \rightarrow 0$.
 
-## Matrix Product Operator (2)
+## Matrix Product Operator
 
 In order to find the ground state of a system, the Hamiltonian can be described by a matrix product operator (MPO). The Hamiltonian defined above can be rewritten as a function of terms defined on the left and right side of the $k$-th term:
 
@@ -82,38 +82,34 @@ $$
 
 The matrix $\hat{W}_{[l]}$ is implemented in the function `get_Ising_MPO(L, J1, J2, g)` which takes the length of the chain `L`, the coupling terms `J1` and `J2` and the field strength `g` and returns the Hamiltonian in MPO form, so that it can be used in the DMRG algorithm.
 
-## DMRG Algorithm (1)
+## DMRG Algorithm
 
 The Density Matrix Renormalization Group (DMRG) algorithm is implemented in the function `run_dmrg(model_pams)` which takes the parameters of the model as the input and returns the ground state energy of the system as well as the magnetization in the $x$- and $z$-direction.
 
 First, the wavefunction is initialized from the model where we assume that all spins in the chain are up. The algorithm variationally optimizes neighbouring tensors while minimizing the ground state energy until the wavefunction converges to the ground state.
 
-## Quantum Computers (3)
+## Examples
 
-The DMRG algorithm could be accelerated by running it on a quantum computer vs a classical computer. This would especially be benificial to larger systems, such as the infinite case of the TFIM.
+This algorithm can be used to find the ground state energies and magnetic susceptibility of the long-range Ising model given by the Hamiltonian above.
 
-By implementing tensor networks on NISQ machines, quantum systems much larger than the computational machine itself can be simulated, and the DMRG algorithm can run a lot more efficiently than on a classical computer and for much larger systems. [1]
-
-[1] Barratt, F., Dborin, J., Bal, M. et al. Parallel quantum simulation of large systems on small NISQ computers. npj Quantum Inf 7, 79 (2021). https://doi.org/10.1038/s41534-021-00420-3
-
-## Ground state energy as a function of the external field (4)
+### Ground state energy as a function of the external field
 
 The ground state energy was plotted as a function of the external field for both the finite and infinite version of the model.
 
-### Finite
+#### Finite Case
 
 For this case, a chain of length 4 was chosen. In order to test the accuracy of the DMRG algorithm, also a manually calculated result is shown in the same graph. This result was calculated by diagonalizing the Hamiltonian using the `eig` method which is available in numpy and is implemented in function `Ising_diag_4sites`. Open boundary conditions were used for the lattice.
 
 ![energy_next](https://user-images.githubusercontent.com/49079733/221142987-7e3539e1-f6ef-4906-9b10-e3d2c25b7018.png)
 
-### Infinite (bonus)
+#### Infinite Case
 
 For this case, periodic boundary conditions were used for the lattice. Due to the computational cost, less values were calculated than in the limited case. The ground state energy is considerably higher than in the finite case, but the decay w.r.t. the external field is preserved.
 
 ![GroundEvsFieldInfinite](https://user-images.githubusercontent.com/49079733/221143139-beac395a-d696-48a6-b9f4-63ac7d62a347.png)
 
-## Magnetization as a function of the external field (5)
+### Magnetization as a function of the external field
 
-The magnetization in the x-direction of the Ising model can be found as $M = < \sum_i s_i^x >$. The magnetization seems to drop to 0 once the external field is present.
+The magnetization in the x-direction of the Ising model can be found as $M = < \sum_i s_i^x >$.
 
 ![Magnetization](https://user-images.githubusercontent.com/49079733/221143260-7ee66849-94f5-4c21-85d2-f8c86d9db1a8.png)
