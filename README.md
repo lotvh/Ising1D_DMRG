@@ -1,6 +1,6 @@
 # Simulating long-range 1-dimensional Ising model with tensor networks
 
-A script that computes the ground state of the quantum Ising model one a transverse field and next-to-nearest neighbour interactions, using DMRG.
+A script that computes the ground state of the quantum Ising model on a transverse field and next-to-nearest neighbour interactions, using DMRG.
 
 ## Hamiltonian
 
@@ -48,7 +48,7 @@ $$
 ...
 $$
 
-where the $g$-terms were not written for visibility and $1_{i..j} = \otimes_{l=i}^k I_l$.
+where the $g$-terms were not written for visibility and $I_{i..j} = \otimes_{l=i}^k I_l$.
 This can be brought into the form of an MPO by introducing matrices $\hat{W}_{[N]}$ whose product reproduces the expression above:
 
 $$
